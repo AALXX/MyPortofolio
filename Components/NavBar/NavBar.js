@@ -14,11 +14,11 @@ export default function NavBar() {
                     <a className={Style.LinkText}>About Me</a>
                 </Link>
 
-                <Link href={"/"}>
+                <Link href={"/projects"}>
                     <a className={Style.LinkText}>My Work</a>
                 </Link>
 
-                <Link href={"/"}>
+                <Link href={"/about"}>
                     <a className={Style.LinkText}>Contact Me</a>
                 </Link>
             </div>
