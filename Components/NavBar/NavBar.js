@@ -18,7 +18,7 @@ export default function NavBar() {
                     <a className={Style.LinkText}>My Work</a>
                 </Link>
 
-                <Link href={"/about"}>
+                <Link href={"/contact"}>
                     <a className={Style.LinkText}>Contact Me</a>
                 </Link>
             </div>

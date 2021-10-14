@@ -126,3 +126,27 @@
     }
     
 }
+
+@media  (min-width: 480px)  and  (max-width: 800px) and (orientation: landscape){
+    /* landscape mode */
+    .HeadContainer{
+        width: 100%;
+
+    }
+    .HeadLine{
+        font-size: 1.8vw;
+    }
+    
+    .Card{
+        width: 40%;
+        height: 45vh;
+    }
+
+    .CardTitle{
+        font-size: .7em;
+    }
+
+    .CardSimpleText{
+        font-size: .5em;
+    }
+}

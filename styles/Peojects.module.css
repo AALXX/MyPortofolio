@@ -1,0 +1,64 @@
+.PageContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+}
+
+.HeadText {
+    color: #DA8300;
+    font-family: "Exo 2";
+    font-size: 1.5vw;
+    margin-top: 7vh;
+}
+
+.ProjectsContainer {
+    border: 2px solid #4b4b4b;
+    width: 60%;
+    height: 21rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-y: scroll;
+}
+
+/* width */
+.ProjectsContainer::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Handle */
+.ProjectsContainer::-webkit-scrollbar-thumb {
+    background: #DA8300;
+}
+
+/* Handle on hover */
+.ProjectsContainer::-webkit-scrollbar-thumb:hover {
+    background: #DA8300;
+}
+
+@media (max-width: 500px) {
+    .ProjectsContainer{
+        width:95%;
+    }
+
+    .HeadText{
+        font-size: 4vw;
+    }
+
+}
+
+@media (min-width: 500px) and (max-width: 800px) {
+
+}
+
+@media (min-width: 800px) and (max-width: 1200px) {
+
+    
+}
+
+@media  (min-width: 480px)  and  (max-width: 800px) and (orientation: landscape){
+    /* landscape mode */
+
+}

@@ -1,6 +1,6 @@
 import style from '../styles/About.module.css'
 
-export default function about() {
+export default function About() {
     return (
         <div className={style.PageContainer}>
             <div className={style.HeadContainer}>
