@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "geroku-postbuild": "npm run build"
+
   },
   "dependencies": {
     "babel-plugin-transform-define": "^2.0.1",

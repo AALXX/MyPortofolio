@@ -13,9 +13,9 @@ export default function Contact() {
         e.preventDefault();
         emailjs.sendForm(`${process.env.service_id}`, `${process.env.tamplate_id}`, e.target, `${process.env.user_id}`)
             .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
+                window.alert("Email send  succesfully");
             }, function (error) {
-                console.log('FAILED...', error);
+                window.alert('FAILED...', error);
             });
 
         e.target.reset();
