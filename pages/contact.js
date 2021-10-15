@@ -1,13 +1,7 @@
 import emailjs from "emailjs-com"
-import { useEffect } from "react";
 import styles from "../styles/Contact.module.css"
 
 export default function Contact() {
-
-
-    useEffect(() => {
-        console.log(process.env.service_id)
-    }, [])
 
     const SendEmail = (e) => {
         e.preventDefault();
