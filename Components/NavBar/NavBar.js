@@ -1,26 +1,17 @@
 import Style from "./styles/NavBar.module.css"
-import Link from "next/Link"
 
 export default function NavBar() {
     return (
         <div className={Style.NavBarContent}>
             <div className={Style.S3rbvnTextContainer}>
-                <Link href={"/"}>
-                    <a className={Style.S3rbvnText}>S3RBVN</a>
-                </Link>
+                <a href={"/"} className={Style.S3rbvnText}>S3RBVN</a>
             </div>
             <div className={Style.LinksContainer}>
-                <Link href={"/about"}>
-                    <a className={Style.LinkText}>About Me</a>
-                </Link>
+                <a href={"/about"} className={Style.LinkText}>About Me</a>
 
-                <Link href={"/projects"}>
-                    <a className={Style.LinkText}>My Work</a>
-                </Link>
+                <a href={"/projects"} className={Style.LinkText}>My Work</a>
 
-                <Link href={"/contact"}>
-                    <a className={Style.LinkText}>Contact Me</a>
-                </Link>
+                <a href={"/contact"} className={Style.LinkText}>Contact Me</a>
             </div>
         </div>
     )
