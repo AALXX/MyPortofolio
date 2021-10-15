@@ -1,7 +1,11 @@
 import styles from "../styles/Peojects.module.css"
 import ProjectsTamplate from "../Components/ProjectsTamplateCard/ProjectsTamplate"
 
+
 export default function Projects() {
+
+
+
     return (
         <div className={styles.PageContainer}>
             <h1 className={styles.HeadText}> Some of My Projects </h1>
@@ -16,16 +20,19 @@ export default function Projects() {
 
                 <ProjectsTamplate
                     ProjectTitle="HighlightsHub"
-                    ProjectDescription="a media sharing web platoform"
+                    ProjectDescription="a gaem highlights media sharing web platoform"
                     ProjectLanguage="javascript"
                     Repo="https://github.com/AALXX/GameHighlightsWebApp"
                 />
+
+
                 <ProjectsTamplate
-                    ProjectTitle="PlutoniumEngine"
-                    ProjectDescription="a little game engine"
+                    ProjectTitle="Elena OS"
+                    ProjectDescription="an operating system"
                     ProjectLanguage="c++"
-                    Repo="https://github.com/AALXX/PlutoniumGameEngine"
+                    Repo="https://github.com/AALXX/ElenaOs"
                 />
+
 
             </div>
         </div>

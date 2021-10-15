@@ -4,4 +4,165 @@
     margin: auto;
     margin-top: 10vh;
     background-color: #424242;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.HeadText{
+    color: #da8300;
+    font-family: "Exo 2 bold";
+    font-size: 1.3vw;
+}
+
+.FooterText{
+    margin-top: 5vh;
+    color: #da8300;
+    font-family: "Exo 2 bold";
+    font-size: 1vw;
+}
+
+.NameInput{
+    background-color: rgb(49, 49, 49);
+    border: none;
+    outline-color: #da8300;
+    color: #da8300;
+    width: 60%;
+    height: 2vh;
+}
+
+.EmailInput{
+    background-color: rgb(49, 49, 49);
+    border: none;
+    outline-color: #da8300;
+    color: #da8300;
+    width: 60%;
+    margin-top: 5vh;
+    height: 2vh;
+
+}
+
+.textInput{
+    background-color: rgb(49, 49, 49);
+    border: none;
+    outline-color: #da8300;
+    color: #da8300;
+    width: 60%;
+    margin-top: 5vh;
+    resize: none;
+}
+
+.SubmitInput{
+    margin-top: 4vh;
+    background-color:transparent;
+    cursor: pointer;
+    outline: none;
+    border: 3px solid #4b4b4b;
+    width: 30%;
+    height: 5vh;
+    color: #da8300;
+
+}
+
+.SubmitInput:hover{
+    background-color:#616161;
+}
+
+@media (max-width: 500px) {
+
+    .Background{
+        width: 80%;
+
+    }
+    
+    .HeadText{
+        font-size: 3vw;
+    }
+
+    .FooterText{
+        font-size: 2vw;
+    }
+    
+
+    .SubmitInput{
+        width: 50%;
+        height: 5vh;
+    }
+
+    .NameInput{
+        height: 4vh;
+    }
+    
+    .EmailInput{
+        height: 4vh;
+    
+    }
+    
+}
+
+@media (min-width: 500px) and (max-width: 800px) {
+
+
+    .Background{
+        width: 70%;
+        height: 50vh;
+    }
+
+    .HeadText{
+        font-size: 2vw;
+    }
+
+    .FooterText{
+        font-size: 2vw;
+    }
+    
+
+}
+
+@media (min-width: 800px) and (max-width: 1200px) {
+
+    .Background{
+        width: 70%;
+        height: 50vh;
+    }
+
+    .HeadText{
+        font-size: 2vw;
+    }
+
+    .FooterText{
+        font-size: 2vw;
+    }
+    
+}
+
+@media  (min-width: 480px)  and  (max-width: 900px) and (orientation: landscape){
+    /* landscape mode */
+
+    .Background{
+        width: 70%;
+        height: 100vh;
+    }
+
+    .HeadText{
+        font-size: 1.5vw;
+    }
+    .SubmitInput{
+        width: 50%;
+        height: 10vh;
+    }
+
+    .NameInput{
+        height: 8vh;
+    }
+    
+    .EmailInput{
+        height: 8vh;
+    
+    }
+
+    .FooterText{
+        font-size: 1vw;
+    }
+    
 }
