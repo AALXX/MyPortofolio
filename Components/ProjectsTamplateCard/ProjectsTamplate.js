@@ -1,5 +1,4 @@
 import styles from './styles/ProjectTamplate.module.css'
-import Link from "next/Link"
 
 export default function ProjectsTamplate(props) {
     return (
