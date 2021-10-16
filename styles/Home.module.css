@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 75vh;
+  height: 85vh;
 }
 
 .IconsContainer{
@@ -12,7 +12,7 @@
   width: 95%;
   flex-direction: column;
   /* border: 1px solid; */
-  margin-top: 90vh;
+  margin-top: auto;
 }
 
 .InstaIcon{
@@ -36,6 +36,7 @@
   color: #da8300;
   font-family: "Exo 2 Bold";
   z-index:0;
+  margin: auto;
   position: absolute;
 
 }
@@ -69,6 +70,11 @@
 }
 
 @media (max-width: 600px) {
+
+  .PageContainer{
+    height: 80vh;
+  }
+
   .HelloBackGround{
     font-size: 30vw;
   }
