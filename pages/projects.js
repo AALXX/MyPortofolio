@@ -13,14 +13,14 @@ export default function Projects() {
             <div className={styles.ProjectsContainer}>
                 <ProjectsTamplate
                     ProjectTitle="PcController"
-                    ProjectDescription="a project design to controll other computers from a web interface"
+                    ProjectDescription="a project designed to controll other computers from a web interface"
                     ProjectLanguage="typescript"
                     Repo="https://github.com/AALXX/PcController"
                 />
 
                 <ProjectsTamplate
                     ProjectTitle="HighlightsHub"
-                    ProjectDescription="a gaem highlights media sharing web platoform"
+                    ProjectDescription="a game highlights media sharing web platoform"
                     ProjectLanguage="javascript"
                     Repo="https://github.com/AALXX/GameHighlightsWebApp"
                 />
@@ -28,7 +28,7 @@ export default function Projects() {
 
                 <ProjectsTamplate
                     ProjectTitle="Elena OS"
-                    ProjectDescription="an operating system"
+                    ProjectDescription="a liitle operating system"
                     ProjectLanguage="c++"
                     Repo="https://github.com/AALXX/ElenaOs"
                 />
