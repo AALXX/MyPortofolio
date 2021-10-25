@@ -1,6 +1,5 @@
 import style from '../styles/Home.module.css'
 
-
 export default function Home() {
   return (
     <div className={style.PageContainer}>
@@ -15,10 +14,13 @@ export default function Home() {
 
       <div className={style.IconsContainer}>
         <a href="https://www.fiverr.com/alexx_s" target="_blank" rel="noreferrer">
-          <img src='/assets/fiverrIco.svg' alt='AccountImageButton' className={style.FiverrIcon} />
+          <img src='/assets/fiverrIco.svg' alt='fiverIcon' className={style.FiverrIcon} />
         </a>
         <a href="https://www.instagram.com/s3rbvn/" target="_blank" rel="noreferrer">
-          <img src='/assets/instagramIco.svg' alt='AccountImageButton' className={style.InstaIcon} />
+          <img src='/assets/instagramIco.svg' alt='instagramIcon' className={style.InstaIcon} />
+        </a>
+        <a href="https://github.com/AALXX" target="_blank" rel="noreferrer">
+          <img src='/assets/github.svg' alt='GithubIcon' className={style.InstaIcon} />
         </a>
       </div>
 
