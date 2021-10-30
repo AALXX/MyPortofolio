@@ -4,8 +4,8 @@ export default function About() {
     return (
         <div className={style.PageContainer}>
             <div className={style.HeadContainer}>
-                <h1 className={style.HeadLine}>Hi, I ‘m a 16 y.o full stack web developer. As languages I know and use mainly javascript,</h1>
-                <h1 className={style.HeadLine}>typescript but i am a bit familiar with c++, python, c#, java</h1>
+                <h1 className={style.HeadLine}>Hi, I ‘m a 16 y.o full stack web developer. As languages I know and use mainly</h1>
+                <h1 className={style.HeadLine}>javascript, typescript but i am a bit familiar with c++, python, c#, java</h1>
 
             </div>
             <div className={style.CardsContainer}>
