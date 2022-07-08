@@ -1,0 +1,76 @@
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React from 'react'
+
+export default function Footer() {
+    const router = useRouter()
+
+    const MoveToScondView = () => {
+        if (router.pathname !== "/") {
+            router.push("/");
+            setTimeout(() => {
+                window.scroll({
+                    top: 950,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            }, 200)
+        } else {
+            window.scroll({
+                top: 950,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    const MoveToThirdView = () => {
+        if (router.pathname !== "/") {
+            router.push("/");
+            setTimeout(() => {
+                window.scroll({
+                    top: 1950,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            }, 200)
+        } else {
+            window.scroll({
+                top: 1950,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    return (
+        <div className='flex bg-footer-gray sm:h-20 h-14 w-full justify-between mb-auto'>
+            <div className='flex sm:flex-col bottom-2' >
+                <img className='h-8 w-8 ml-4 mt-3' src="/favicon.ico" />
+                <h1 className='mt-auto sm:text-xs text-[.4rem] font-Exo_2 mb-3 ml-4'>&copy; Official Alex Serban Portofolio, 2022,All rights reserved.</h1>
+            </div>
+            <div className='flex ml-20 flex-col self-center'>
+                <button className='sm:text-xs text-[.3rem] font-Exo_2 sm:mt-2' onClick={MoveToScondView}>About Me</button>
+                <button className='sm:text-xs text-[.3rem] font-Exo_2 sm:mt-2' onClick={MoveToThirdView}>My Projects</button>
+                <Link href={"/contact"}>
+                    <button className='sm:text-xs text-[.4rem] font-Exo_2 sm:mt-2'>Contact Me</button>
+                </Link>
+            </div>
+            <div className='flex w-80 justify-center'>
+
+                <Link href={"https://www.instagram.com/s3rbvn/"}>
+                    <a className='sm:h-7 h-5pinde self-center mr-4 cursor-pointer'><img className='sm:h-7 h-5' src="/assets/footer/instagram-logo.svg" /></a>
+                </Link>
+
+                <Link href={"https://www.fiverr.com/alexx_s"}>
+                    <a className='sm:h-7 h-5 self-center mr-4 cursor-pointer'><img className='sm:h-7 h-5' src="/assets/footer/fiverr-logo.svg" /></a>
+                </Link>
+
+                <Link href={"https://github.com/AALXX"}>
+                    <a className='sm:h-7 h-5 self-center mr-4 cursor-pointer'><img className='sm:h-7 h-5' src="/assets/footer/github-logo.svg" /></a>
+                </Link>
+
+            </div>
+        </div>
+    )
+}

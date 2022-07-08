@@ -1,0 +1,27 @@
+import React from 'react'
+import { motion } from "framer-motion"
+
+export default function StartPart() {
+    return (
+        <>
+            <motion.h1
+                className="text-white text-center align-middle sm:text-bigHello text-7xl font-Exo_2 sm:mb-32 w-full"
+                initial="hidden"
+                animate="visible"
+                variants={{
+                    hidden: {
+                        opacity: 0
+                    },
+                    visible: {
+                        opacity: .25,
+                        transition: {
+                            delay: 1
+                        }
+                    }
+                }}
+            >
+                HELLO
+            </motion.h1>
+        </>
+    )
+}

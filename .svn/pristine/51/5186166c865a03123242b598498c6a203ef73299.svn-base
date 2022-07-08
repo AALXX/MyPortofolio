@@ -1,0 +1,26 @@
+import React from 'react'
+import Card from './Card'
+
+export default function AboutMePart() {
+    return (
+        <div className='flex flex-col bg-nav-gray h-laptop_view_1920 w-full'>
+            <h1 className=' text-white text-xs sm:text-4xl ml-10 mt-10'>About Me</h1>
+            <hr className='w-52 mt-8' />
+
+            <div className='flex flex-col self-center mt-28'>
+                <h1 className='text-white text-xs sm:text-3xl self-center'>Hi there, My name is Alex. </h1>
+                <h1 className='text-white text-xs sm:text-3xl ml-5 '>I'm a 17 y.o self thought full stack developer with over 2 years of experience and I make fast web applications</h1>
+
+                <div className='flex w-full mt-40 border-2 h-80 flex-col bg-table-gray'>
+                    <h1 className='text-white text-xs sm:text-2xl self-center mt-3'>Tehnologies I use</h1>
+                    <hr className='mt-3' />
+                    <div className='flex mt-8 content-around w-full '>
+                        <Card CardName="Front End" CardBody={["NextJs", "Javascript", "Typescript"]} />
+                        <Card CardName="Back End" CardBody={["Nodejs", "Expressjs", "Sql", "GoLang"]} />
+                        <Card CardName="Other" CardBody={["Github"]} />
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}

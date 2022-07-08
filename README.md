@@ -1,1 +1,0 @@
-This is a little portofolio website project made with [nextjs]  
