@@ -43,7 +43,7 @@ router.use((req: any, res: any, next: NextFunction) => {
 
 // get repo data
 const getRepoData = () => {
-    fs.readFile(path.join(__dirname, `../projects.json`), 'utf8', async (err, data) => {
+    fs.readFile(path.join(__dirname, `../../projects.json`), 'utf8', async (err, data) => {
         if (err) {
             return console.log(`Error reading file from disk: ${err}`);
         }
@@ -56,7 +56,7 @@ const getRepoData = () => {
             projects[index].lastupdate = projectData.data.pushed_at;
         }
 
-        return fs.writeFileSync(path.join(__dirname, `../projects.json`), JSON.stringify(projects));
+        return fs.writeFileSync(path.join(__dirname, `../../projects.json`), JSON.stringify(projects));
     });
 };
 

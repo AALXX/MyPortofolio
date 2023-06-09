@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "server": "nodemon --exec ts-node src/api/Portofolio_Api.ts",
+        "server": "nodemon --exec ts-node src/api/Portofolio_Api.ts --ignore ./projects.json",
         "start": "node backend-build/api/Portofolio_Api.js",
         "build-local": "rm -rf backend-build/ && tsc && mv -i projects.json backend-build/ && mv -i -v projects_images backend-build/ ",
         "build": "tsc && mv -i projects.json backend-build/ && mv -i projects_images backend-build/ && rm -v -rf src"

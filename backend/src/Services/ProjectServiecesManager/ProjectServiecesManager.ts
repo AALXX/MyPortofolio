@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
-const projects = require(path.join(__dirname, `../../projects.json`));
+const projects = require('../../../projects.json');
 import fs from 'fs';
 import path from 'path';
 
