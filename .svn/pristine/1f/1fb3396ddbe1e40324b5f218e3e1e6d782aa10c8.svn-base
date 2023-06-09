@@ -1,0 +1,15 @@
+import '../styles/globals.css'
+import Layout from '../Layout/Layout'
+import { AnimatePresence } from 'framer-motion'
+
+function Portofolio({ Component, pageProps }) {
+  return (
+    <Layout>
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} />
+      </AnimatePresence>
+    </Layout>
+  )
+}
+
+export default Portofolio

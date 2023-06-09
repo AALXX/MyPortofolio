@@ -1,0 +1,18 @@
+import AboutMePart from "../Components/AboutMePart/AboutMePart";
+import StartPart from "../Components/StartPart/StartPart";
+
+
+export default function Home() {
+
+  return (
+    <>
+      <div className="flex w-screen flex-col">
+        <div className='flex justify-center items-center h-laptop_view_1920 '>
+          <StartPart/>
+        </div>
+
+        <AboutMePart />
+      </div>
+    </>
+  )
+}

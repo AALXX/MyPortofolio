@@ -1,0 +1,5 @@
+{
+  "extends": "next/core-web-vitals",
+  "plugins": ["react", "@typescript-eslint"],
+  "ignorePatterns": ["postcss.config.js", "tailwind.config.js"]
+}

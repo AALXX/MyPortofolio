@@ -1,0 +1,29 @@
+import React from 'react'
+import Card from './Card'
+
+export default function AboutMePart() {
+
+
+    return (
+        <>
+            <h1 className='text-white text-xs sm:text-4xl ml-10 mt-10'>About Me</h1>
+            <hr className='w-52 mt-8' />
+
+            <div className='flex flex-col w-[90%] self-center mt-10 sm:mt-28'>
+                <h1 className='text-white text-[.6rem] sm:text-3xl self-center'>Hi there, My name is Alex. </h1>
+                <h1 className='text-white text-[.6rem] sm:text-3xl self-center'>I'm a 17 y.o self thought full stack developer with over 2 years of experience </h1>
+                <h1 className='text-white text-[.6rem] sm:text-3xl self-center'>and I make fast web applications</h1>
+
+                <div className='flex w-full mt-10 sm:mt-40 border-2 sm:h-80 h-40 flex-col bg-table-gray'>
+                    <h1 className='text-white text-xs sm:text-2xl self-center mt-3'>Tehnologies I use</h1>
+                    <hr className='mt-3' />
+                    <div className='flex sm:mt-8 mt-4 content-around w-full justify-around '>
+                        <Card CardName="Front End" CardBody={["NextJs", "Javascript", "Typescript"]} />
+                        <Card CardName="Back End" CardBody={["Nodejs", "Expressjs", "Sql", "GoLang"]} />
+                        <Card CardName="Other" CardBody={["Github"]} />
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
