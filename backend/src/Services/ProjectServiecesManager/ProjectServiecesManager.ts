@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
-const projects = require('../../../projects.json');
+import { MongoClient, ServerApiVersion } from 'mongodb';
 import fs from 'fs';
 import path from 'path';
 
@@ -12,10 +12,24 @@ const myValidationResult = validationResult.withDefaults({
     },
 });
 
-const GetProjectProprieties = (req: Request, res: Response) => {
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(`${process.env.URI}`, {
+    serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+    },
+});
+
+const GetProjectProprieties = async (req: Request, res: Response) => {
+    // Connect the client to the server (optional starting in v4.7)
+    await client.connect();
+    // Send a ping to confirm a successful connection
+    const dbrRes = await client.db('portofolioDB').collection('projects').find().toArray();
+
     return res.status(200).json({
         error: false,
-        projects: projects,
+        projects: dbrRes,
     });
 };
 
