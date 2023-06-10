@@ -3,6 +3,7 @@ import { validationResult } from 'express-validator';
 import { MongoClient, ServerApiVersion } from 'mongodb';
 import fs from 'fs';
 import path from 'path';
+require('dotenv').config(); // this loads env vars
 
 const myValidationResult = validationResult.withDefaults({
     formatter: (error) => {
@@ -22,10 +23,16 @@ const client = new MongoClient(`${process.env.URI}`, {
 });
 
 const GetProjectProprieties = async (req: Request, res: Response) => {
-    // Connect the client to the server (optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    const dbrRes = await client.db('portofolioDB').collection('projects').find().toArray();
+    let dbrRes;
+    try {
+        // Connect the client to the server (optional starting in v4.7)
+        await client.connect();
+        // Send a ping to confirm a successful connection
+        dbrRes = await client.db('portofolioDB').collection('projects').find().toArray();
+    } finally {
+        // Ensures that the client will close when you finish/error
+        await client.close();
+    }
 
     return res.status(200).json({
         error: false,
