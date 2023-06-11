@@ -7,24 +7,6 @@ import React from "react";
 export default function Footer() {
   const router = useRouter();
 
-  const MoveToFirstPage = () => {
-    if (router.pathname !== "/") {
-      router.push("/");
-      setTimeout(() => {
-        window.scroll({
-          top: 0,
-          left: 0,
-          behavior: "smooth",
-        });
-      }, 20);
-    } else {
-      window.scroll({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
-    }
-  };
   return (
     <div className="flex bg-footer-gray lg:h-24 h-14  sm:h-[6rem] w-full justify-between mb-auto">
       <div className="flex sm:flex-col">

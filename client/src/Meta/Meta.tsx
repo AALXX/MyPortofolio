@@ -1,4 +1,9 @@
-const Meta = ({ title, keywords, description }) => {
+interface MetaTypes {
+  title: string;
+  keywords: string;
+  description: string;
+}
+const Meta = ({ title, keywords, description }: MetaTypes) => {
   return (
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />

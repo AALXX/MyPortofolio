@@ -7,7 +7,7 @@ interface CardProps {
 
 export default function Card(props: CardProps) {
 
-  const [cardBodyTehnologies, setCardBodyTehnologies] = useState([]);
+  const [cardBodyTehnologies, setCardBodyTehnologies] = useState<Array<string>>([]);
 
   useEffect(() => {
     setCardBodyTehnologies(props.CardBody)

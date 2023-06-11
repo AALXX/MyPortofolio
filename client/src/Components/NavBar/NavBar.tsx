@@ -6,22 +6,7 @@ export default function NavBar() {
   const router = useRouter();
 
   const MoveToFirstPage = () => {
-    if (router.pathname !== "/") {
-      router.push("/");
-      setTimeout(() => {
-        window.scroll({
-          top: 0,
-          left: 0,
-          behavior: "smooth",
-        });
-      }, 20);
-    } else {
-      window.scroll({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
-    }
+    router.push("/");
   };
 
   return (
