@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type React from 'react'
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Github, Linkedin, Mail, Menu, X } from 'lucide-react'
 
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -23,7 +23,7 @@ const Sidebar = () => {
                 <div
                     className={`bg-navbar-grey fixed inset-y-0 left-0 z-30 flex h-screen transform flex-col bg-[#00000067] shadow-lg transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'} w-[75vw] sm:w-[16rem] md:w-[18rem] md:translate-x-0`}
                 >
-                    <nav className="flex flex-col gap-4 px-4 pt-16 md:gap-6 md:pt-0">
+                    <nav className="flex h-full flex-col gap-4 px-4 pt-16 md:gap-6 md:pt-0">
                         <div className="mt-8 h-28 w-28 self-center overflow-hidden rounded-full border-3 border-white sm:h-32 sm:w-32 md:mt-14 md:h-36 md:w-36 lg:h-40 lg:w-40">
                             <Image src="/Headshot.jpeg" alt="Profile picture" width={200} height={200} className="h-full w-full object-cover" />
                         </div>
@@ -45,6 +45,20 @@ const Sidebar = () => {
                             <NavLink href="/contact" onClick={() => setIsOpen(false)}>
                                 Contact
                             </NavLink>
+                        </div>
+                        <div className="mt-auto mb-4 flex w-full justify-around">
+                            <Link href={process.env.LINKEDIN_LINK as string} target="_blank" className="flex cursor-pointer items-center">
+                                <Linkedin className="h-5 w-5 text-white" />
+                                <span className="sr-only">LinkedIn</span>
+                            </Link>
+                            <Link href={process.env.GITHUB_LINK as string} target="_blank" className="flex cursor-pointer items-center">
+                                <img src="/github.svg" alt="LinkedIn" className="h-5 w-5" />
+                                <span className="sr-only">GitHub</span>
+                            </Link>
+                            <Link href={process.env.MAIL_LINK as string} className="flex cursor-pointer items-center">
+                                <Mail className="h-5 w-5 text-white" />
+                                <span className="sr-only">Email</span>
+                            </Link>
                         </div>
                     </nav>
                 </div>
