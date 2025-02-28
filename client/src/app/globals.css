@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Monda";
+  src: url("../../public/Fonts/Monda/static/Monda-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Monda";
+  src: url("../../public/Fonts/Monda/static/Monda-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+
 @theme {
   --breakpoint-*: initial;
   --breakpoint-sm: 640px;
@@ -14,6 +26,9 @@
     from 180deg at 50% 50%,
     var(--tw-gradient-stops)
   );
+
+  --font-monda: "Monda", sans-serif;
+
 }
 
 :root {
@@ -27,6 +42,8 @@
     --foreground: #ededed;
   }
 }
+
+
 
 body {
     padding: 0;
