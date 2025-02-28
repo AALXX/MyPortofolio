@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1600px;
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      Segoe UI,
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      Fira Sans,
+      Droid Sans,
+      Helvetica Neue,
+      sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+      45deg,
+      #212121,
+      #757575
+    ); /* Diagonal gradient */
+
+    /* overflow: hidden; */
+  }
+
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #363636;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #474747;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5c5c5c;
+  }
+
+  ::-webkit-slider-thumb {
+    height: 1em;
+    width: 1em;
+    border-radius: 5px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
