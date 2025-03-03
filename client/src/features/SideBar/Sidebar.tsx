@@ -71,7 +71,7 @@ const Sidebar = () => {
 
 const NavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) => (
     <Link href={href} className="w-full" onClick={onClick}>
-        <button className="font-monda h-10 w-full rounded-xl border-3 bg-none text-base font-bold text-white transition-colors hover:bg-white/10 sm:h-12 sm:text-lg md:h-14 md:text-lg">{children}</button>
+        <button className="font-monda h-10 w-full rounded-xl border-3 bg-none text-base font-bold cursor-pointer text-white transition-colors hover:bg-white/10 sm:h-12 sm:text-lg md:h-14 md:text-lg">{children}</button>
     </Link>
 )
 

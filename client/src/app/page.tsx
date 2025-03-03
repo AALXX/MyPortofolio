@@ -1,6 +1,6 @@
 const AboutMe = () => {
     return (
-        <div className="p- flex h-full flex-col justify-between overflow-y-auto px-4 pb-8 sm:p-6 md:p-8 3xl:p-11">
+        <div className="3xl:p-11 flex h-full flex-col justify-between overflow-y-auto px-4 pb-8 sm:p-6 md:p-8">
             <div className="flex flex-col">
                 <h1 className="font-monda text-2xl font-bold text-white sm:text-3xl md:text-4xl">Some things about me</h1>
                 <div className="mt-4 h-1 w-1/3 bg-gradient-to-r from-white to-transparent" />
@@ -16,7 +16,7 @@ const AboutMe = () => {
                 <p className="mt-4 text-right text-white sm:text-lg md:text-xl">
                     My love for coding began with video games—what started as a fascination with interactive experiences soon led me to dive into game development, graphics programming, and rendering pipelines. Along the
                     way, I dipped my feet into web development, where I fell in love, focusing on fast, responsive, and intuitive applications. My interest in systems programming pushed me to experiment with Assembly and
-                    C++, even attempting to build my own OS. More recently, AI and machine learning have captured my attention, and while I’m still learning, I’m excited about the endless possibilities they offer.
+                    C++, even attempting to build my own OS. More recently, AI and machine learning have captured my attention, and while I'm still learning, I'm excited about the endless possibilities they offer.
                 </p>
             </div>
 
