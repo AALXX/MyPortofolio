@@ -2,7 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Meta from '@/Meta'
 import type React from 'react' // Added import for React
-import Sidebar from '@/features/sideBar/Sidebar'
+import Sidebar from '@/features/SideBar/Sidebar'
 
 const inter = Inter({ subsets: ['latin'] })
 

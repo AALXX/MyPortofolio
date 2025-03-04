@@ -168,7 +168,7 @@ export default function SkillTree() {
             .force(
                 'link',
                 d3
-                    .forceLink<d3.SimulationNodeDatum & Node, d3.SimulationLinkDatum & Link>()
+                    .forceLink<d3.SimulationNodeDatum & Node, d3.SimulationLinkDatum<d3.SimulationNodeDatum> & Link>()
                     .id(d => (d as Node).id)
                     .distance(100)
                     .strength(0.01) 
@@ -279,7 +279,7 @@ export default function SkillTree() {
             .text(d => d.id)
 
         simulation.nodes(nodes as (d3.SimulationNodeDatum & Node)[])
-        ;(simulation.force('link') as d3.ForceLink<d3.SimulationNodeDatum & Node, d3.SimulationLinkDatum & Link>).links(links as (d3.SimulationLinkDatum & Link)[])
+        ;(simulation.force('link') as d3.ForceLink<d3.SimulationNodeDatum & Node, d3.SimulationLinkDatum<d3.SimulationNodeDatum & Node> & Link>).links(links as (d3.SimulationLinkDatum<d3.SimulationNodeDatum & Node> & Link)[])
 
         simulation.on('tick', () => {
             const centerNode = nodes.find(node => node.id === 'center')
