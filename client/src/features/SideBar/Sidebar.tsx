@@ -47,15 +47,15 @@ const Sidebar = () => {
                             </NavLink>
                         </div>
                         <div className="mt-auto mb-4 flex w-full justify-around">
-                            <Link href={process.env.LINKEDIN_LINK as string} target="_blank" className="flex cursor-pointer items-center">
+                            <Link href={process.env.NEXT_PUBLIC_LINKEDIN_LINK as string} target="_blank" className="flex cursor-pointer items-center">
                                 <Linkedin className="h-5 w-5 text-white" />
                                 <span className="sr-only">LinkedIn</span>
                             </Link>
-                            <Link href={process.env.GITHUB_LINK as string} target="_blank" className="flex cursor-pointer items-center">
+                            <Link href={process.env.NEXT_PUBLIC_GITHUB_LINK as string} target="_blank" className="flex cursor-pointer items-center">
                                 <img src="/github.svg" alt="LinkedIn" className="h-5 w-5" />
                                 <span className="sr-only">GitHub</span>
                             </Link>
-                            <Link href={process.env.MAIL_LINK as string} className="flex cursor-pointer items-center">
+                            <Link href={process.env.NEXT_PUBLIC_MAIL_LINK as string} className="flex cursor-pointer items-center">
                                 <Mail className="h-5 w-5 text-white" />
                                 <span className="sr-only">Email</span>
                             </Link>
@@ -71,7 +71,7 @@ const Sidebar = () => {
 
 const NavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) => (
     <Link href={href} className="w-full" onClick={onClick}>
-        <button className="font-monda h-10 w-full rounded-xl border-3 bg-none text-base font-bold cursor-pointer text-white transition-colors hover:bg-white/10 sm:h-12 sm:text-lg md:h-14 md:text-lg">{children}</button>
+        <button className="font-monda h-10 w-full cursor-pointer rounded-xl border-3 bg-none text-base font-bold text-white transition-colors hover:bg-white/10 sm:h-12 sm:text-lg md:h-14 md:text-lg">{children}</button>
     </Link>
 )
 
