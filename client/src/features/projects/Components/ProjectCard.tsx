@@ -19,22 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, githubUrl
     const [projectUrl, setProjectUrl] = useState<string>('')
 
     useEffect(() => {
-        if (githubUrl) {
-            fetch(githubUrl)
-                .then(response => response.json())
-                .then(data => {
-                    setProjectName(data.name)
-                    setProjectUrl(data.html_url)
-                })
-
-            fetch(githubUrl + '/languages')
-                .then(response => response.json())
-                .then(data => {
-                    setProjectLanguages(Object.keys(data).slice(0, 3))
-                })
-        }else{
-            setProjectUrl(`https://github.com/AALXX/${projectName}`)
-        }
+        setProjectUrl(`https://github.com/AALXX/${projectName}`)
     }, [])
 
     return (
