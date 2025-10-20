@@ -1,36 +1,88 @@
-const AboutMe = () => {
+'use client'
+import { motion } from 'framer-motion'
+import { Code2, Sparkles, Target } from 'lucide-react'
+
+const About = () => {
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2
+            }
+        }
+    }
+
+    const item = {
+        hidden: { opacity: 0, y: 20 },
+        show: { opacity: 1, y: 0 }
+    }
+
     return (
-        <div className="3xl:p-11 flex h-full flex-col justify-between overflow-y-auto px-4 pb-8 sm:p-6 md:p-8">
-            <div className="flex flex-col">
-                <h1 className="font-monda text-2xl font-bold text-white sm:text-3xl md:text-4xl">Some things about me</h1>
-                <div className="mt-4 h-1 w-1/3 bg-gradient-to-r from-white to-transparent" />
-                <p className="mt-4 text-white sm:text-lg md:text-xl">
-                    Hello, world! My name is Serban Alexandru, and I am an indie software developer and tech enthusiast with a passion for creating innovative digital things. You can find me either creating web
-                    applications or fidgeting with low-level programming. I love solving complex problems and pushing the boundaries of my technology knowledge.
-                </p>
-            </div>
+        <div className="container mx-auto max-w-5xl overflow-y-scroll px-6 py-24">
+            <motion.div variants={container} initial="hidden" animate="show" className="space-y-16">
+                <motion.div variants={item} className="space-y-6">
+                    <div className="border-primary/20 bg-primary/5 text-primary inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm">
+                        <Sparkles className="h-4 w-4" />
+                        <span>Available for opportunities</span>
+                    </div>
 
-            <div className="my-8 flex flex-col items-end md:my-12">
-                <h1 className="font-monda text-2xl font-bold text-white sm:text-3xl md:text-4xl">My Coding Journey (so far)</h1>
-                <div className="mt-4 h-1 w-1/3 bg-gradient-to-l from-white to-transparent" />
-                <p className="mt-4 text-right text-white sm:text-lg md:text-xl">
-                    My love for coding began with video games—what started as a fascination with interactive experiences soon led me to dive into game development, graphics programming, and rendering pipelines. Along the
-                    way, I dipped my feet into web development, where I fell in love, focusing on fast, responsive, and intuitive applications. My interest in systems programming pushed me to experiment with Assembly and
-                    C++, even attempting to build my own OS. More recently, AI and machine learning have captured my attention, and while I'm still learning, I'm excited about the endless possibilities they offer.
-                </p>
-            </div>
+                    <h1 className="text-5xl font-bold tracking-tight md:text-7xl">
+                        Hi, I'm <span className="text-gradient">Serban Alexandru</span>
+                    </h1>
 
-            <div className="flex flex-col">
-                <h1 className="font-monda text-2xl font-bold text-white sm:text-3xl md:text-4xl">Key Ideals & Philosophy</h1>
-                <div className="mt-4 h-1 w-1/3 bg-gradient-to-r from-white to-transparent" />
-                <p className="mt-4 text-white sm:text-lg md:text-xl">
-                    In a field that evolves rapidly, I believe that adaptability and continuous learning are key to staying ahead. I see every challenge as an opportunity to grow, whether it's mastering a new programming
-                    language, exploring the latest frameworks, or diving into academic research. Above all, I value clean, efficient code, user-focused design, and the power of technology to create meaningful and
-                    impactful experiences. My goal is to keep pushing myself, sharing and gaining knowledge, and building projects that make a difference.
-                </p>
-            </div>
+                    <p className="text-muted-foreground max-w-3xl text-xl leading-relaxed">
+                        An indie software developer and tech enthusiast with a passion for creating innovative digital experiences. I specialize in building high-performance web applications and exploring the depths of
+                        low-level programming.
+                    </p>
+                </motion.div>
+
+                <motion.div variants={item} className="grid gap-6 md:grid-cols-2">
+                    <div className="group border-border bg-card hover:border-primary/50 relative overflow-hidden rounded-xl border p-8 transition-all">
+                        <div className="from-primary/5 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                        <div className="relative space-y-4">
+                            <div className="bg-primary/10 inline-flex rounded-lg p-3">
+                                <Code2 className="text-primary h-6 w-6" />
+                            </div>
+                            <h3 className="text-2xl font-bold">Coding Journey</h3>
+                            <p className="text-muted-foreground leading-relaxed">
+                                Started with game development, evolved through web technologies, systems programming with Assembly and C++, and now exploring AI/ML. Every challenge is an opportunity to grow.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="group border-border bg-card hover:border-primary/50 relative overflow-hidden rounded-xl border p-8 transition-all">
+                        <div className="from-primary/5 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                        <div className="relative space-y-4">
+                            <div className="bg-primary/10 inline-flex rounded-lg p-3">
+                                <Target className="text-primary h-6 w-6" />
+                            </div>
+                            <h3 className="text-2xl font-bold">Philosophy</h3>
+                            <p className="text-muted-foreground leading-relaxed">
+                                Believing in adaptability, continuous learning, clean code, and user-focused design. Building technology that creates meaningful and impactful experiences.
+                            </p>
+                        </div>
+                    </div>
+                </motion.div>
+
+                <motion.div variants={item} className="space-y-8">
+                    <h2 className="text-3xl font-bold">What I Do</h2>
+                    <div className="grid gap-4 md:grid-cols-3">
+                        {[
+                            { title: 'Web Development', desc: 'Fast, responsive, and intuitive applications' },
+                            { title: 'Systems Programming', desc: 'Low-level programming with C++ and Assembly' },
+                            { title: 'AI & Machine Learning', desc: 'Exploring endless possibilities in AI' }
+                        ].map((focus, index) => (
+                            <div key={index} className="border-border bg-secondary/50 space-y-2 rounded-lg border p-6">
+                                <h4 className="text-foreground font-semibold">{focus.title}</h4>
+                                <p className="text-muted-foreground text-sm">{focus.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </motion.div>
+            </motion.div>
         </div>
     )
 }
 
-export default AboutMe
+export default About

@@ -1,18 +1,32 @@
 'use client'
 
+import { Home, ArrowLeft } from 'lucide-react'
+import Link from 'next/link'
+
 const NotFound = () => {
     return (
-        <div className="flex min-h-screen w-full flex-col items-center justify-center text-white">
-            <div className="relative mb-8 flex items-center justify-center">
-                <div className="absolute animate-ping opacity-30">
-                    <span className="text-primary/50 font-mono text-9xl font-black">404</span>
+        <div className="bg-background flex min-h-screen items-center justify-center px-6">
+            <div className="max-w-md space-y-6 text-center">
+                <div className="space-y-2">
+                    <h1 className="text-gradient text-8xl font-bold">404</h1>
+                    <h2 className="text-foreground text-2xl font-semibold">Page Not Found</h2>
+                    <p className="text-muted-foreground">The page you're looking for doesn't exist or has been moved.</p>
                 </div>
-                <span className="text-primary font-mono text-9xl font-black">404</span>
+
+                <div className="flex flex-col justify-center gap-4 pt-4 sm:flex-row">
+                    <Link href="/" className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold transition-all">
+                        <Home className="h-4 w-4" />
+                        Go Home
+                    </Link>
+                    <button
+                        onClick={() => window.history.back()}
+                        className="border-border bg-card text-foreground hover:bg-secondary inline-flex items-center justify-center gap-2 rounded-lg border px-6 py-3 font-semibold transition-all"
+                    >
+                        <ArrowLeft className="h-4 w-4" />
+                        Go Back
+                    </button>
+                </div>
             </div>
-
-            <h1 className="font-monda mb-4 text-center text-3xl font-bold sm:text-4xl md:text-5xl">Page Not Found</h1>
-
-            <p className="mb-8 max-w-md text-center text-lg text-gray-400">The page you're looking for doesn't exist or has been moved to another location.</p>
         </div>
     )
 }

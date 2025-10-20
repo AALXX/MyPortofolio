@@ -1,45 +1,54 @@
-'use client'
-
-import Link from 'next/link'
-import LanguageTag from './LanguageTag'
-import { useEffect, useState } from 'react'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, Github } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 interface ProjectCardProps {
-    title?: string
-    description?: string
+    title: string
+    description: string
+    languages: string[]
     githubUrl?: string
-    languages?: string[]
+    liveUrl?: string
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, githubUrl, languages }) => {
-    const [projectName, setProjectName] = useState<string>(title || '')
-    const [projectLanguages, setProjectLanguages] = useState<string[]>(languages || [])
-    const [projectDescription, setProjectDescription] = useState<string>(description || '')
-    const [projectUrl, setProjectUrl] = useState<string>('')
-
-    useEffect(() => {
-        setProjectUrl(`https://github.com/AALXX/${projectName}`)
-    }, [])
-
+const ProjectCard = ({ title, description, languages, githubUrl, liveUrl }: ProjectCardProps) => {
     return (
-        <div className="3xl:h-[20rem] flex h-[14rem] w-full flex-col overflow-hidden rounded-lg bg-[#00000067] transition-transform hover:scale-105 sm:h-[18rem] md:h-[20rem] lg:h-[18rem]">
-            <div className="3xl:h-[8rem] flex flex-col pt-3 pr-3 pb-0 pl-3 sm:pt-4 sm:pr-4 sm:pb-0 sm:pl-4 md:h-[10rem] md:pt-5 md:pr-5 md:pb-0 md:pl-5 lg:pt-6 lg:pr-6 lg:pb-0 lg:pl-6">
-                <h3 className="mb-1 text-base font-semibold text-white sm:mb-2 sm:text-lg md:mb-3 md:text-xl lg:text-2xl">{projectName}</h3>
-                <p className="line-clamp-3 text-xs text-gray-300 sm:line-clamp-4 sm:text-sm md:text-base">{projectDescription}</p>
-            </div>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="group border-border bg-card hover:border-primary/50 hover:shadow-primary/10 relative overflow-hidden rounded-xl border p-6 transition-all duration-300 hover:shadow-lg"
+        >
+            {/* Gradient overlay on hover */}
+            <div className="from-primary/5 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
-            <div className="flex h-[3.5rem] w-[90%] self-center">
-                {projectLanguages.map((language, index) => (
-                    <LanguageTag key={index} language={language} />
-                ))}
-            </div>
+            <div className="relative space-y-4">
+                <div className="flex items-start justify-between">
+                    <h3 className="text-foreground text-xl font-bold">{title}</h3>
+                    <div className="flex gap-2">
+                        {githubUrl && (
+                            <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                                <Github className="h-5 w-5" />
+                            </a>
+                        )}
+                        {liveUrl && (
+                            <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                                <ExternalLink className="h-5 w-5" />
+                            </a>
+                        )}
+                    </div>
+                </div>
 
-            <Link href={projectUrl} target="_blank" className="mt-auto mb-4 flex h-10 w-[90%] items-center justify-center self-center rounded-lg border-2 border-white transition-colors hover:bg-white/10 sm:h-11 md:h-12">
-                <ExternalLink className="mr-2 h-4 w-4 text-white" />
-                <h1 className="font-monda text-sm font-bold text-white sm:text-base md:text-lg">View Project</h1>
-            </Link>
-        </div>
+                <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
+
+                <div className="flex flex-wrap gap-2 pt-2">
+                    {languages.map((lang, index) => (
+                        <span key={index} className="bg-secondary text-secondary-foreground rounded-full px-3 py-1 text-xs font-medium">
+                            {lang}
+                        </span>
+                    ))}
+                </div>
+            </div>
+        </motion.div>
     )
 }
 
