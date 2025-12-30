@@ -5,10 +5,17 @@ import { motion } from 'framer-motion'
 const Projects = () => {
     const projects = [
         {
+            title: 'Obtura ',
+            description: 'Obtura eliminates the DevOps bottleneck for European SME development teams. Zero-config deployment, built-in monitoring, predictable pricing.',
+            languages: ['Next.js', 'TypeScript', 'Go', 'Docker', 'python'],
+            githubUrl: 'https://github.com/AALXX/Obtura',
+            liveUrl: 'https://obtura-market.vercel.app/'
+        },
+        {
             title: 'Titanium Ignis ',
             description:
                 'All-in-one team management platform combining GitHub, Jira, and Heroku-like features. Real-time collaboration for development teams, including code, tracking, and deployment within a single workspace.',
-            languages: ['NestJS', 'TypeScript', 'Go', 'Docker'],
+            languages: ['Next.js', 'TypeScript', 'Go', 'Docker'],
             githubUrl: 'https://github.com/AALXX/Titanium-Ignis',
             liveUrl: 'https://titanium-ignis.vercel.app/'
         },
@@ -18,13 +25,7 @@ const Projects = () => {
             languages: ['TypeScript', 'Jupyter Notebook', 'Go'],
             githubUrl: 'https://github.com/AALXX/StreamPlatform'
         },
-        {
-            title: 'Trainerz ',
-            description:
-                'Full-stack streaming platform built with TypeScript and Docker, designed for scalability and rapid deployment via Docker Compose. Emphasized clean, maintainable code structure and modular client-server architecture.',
-            languages: ['TypeScript', 'Go', 'Java'],
-            githubUrl: 'https://github.com/AALXX/Trainerz'
-        },
+
         {
             title: 'PlutoniumGameEngine',
             description:
